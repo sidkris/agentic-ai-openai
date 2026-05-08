@@ -10,12 +10,12 @@ os.environ["LANGSMITH_API_KEY"] = os.getenv("LANGSMITH_API_KEY")
 os.environ["LANGSMITH_TRACING"] = "true"
 os.environ["LANGSMITH_PROJECT"] = "sid-connection-test"
 
-@traceable
+@traceable(name = "connection-test")
 def sample_function(a : int, b : int) -> int:
     return a + b 
 
 
-@traceable
+@traceable(name = "yfinance")
 def get_price_history(ticker : str, start : str = "2026-01-01") -> pd.DataFrame:
     stock = yf.Ticker(ticker)
     prices = stock.history(start = start)
