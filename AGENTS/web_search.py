@@ -26,4 +26,4 @@ class WebSearch:
         return response 
 
 if __name__ == "__main__":
-    print(search("latest news"))
+    print(WebSearch.search("latest news"))
