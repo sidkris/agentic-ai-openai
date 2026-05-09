@@ -1,3 +1,4 @@
 langsmith
 openai-agents
 openai
+tavily-python
