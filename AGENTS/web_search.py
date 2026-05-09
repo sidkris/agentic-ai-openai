@@ -12,8 +12,8 @@ client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 def search(search_term : str):
 
     response = client.search(
-        query="Latest News",
-        max_results=5
+        query= search_term,
+        max_results = 5
     )
 
     for result in response["results"]:
