@@ -9,8 +9,9 @@ load_dotenv()
 client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 class WebSearch:
-    @traceable
-    def search(search_term : str):
+    @classmethod
+    @traceable(name = "web-search")
+    def search(cls, search_term : str):
 
         response = client.search(
             query= search_term,
