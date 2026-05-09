@@ -10,6 +10,7 @@ client = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
 
 class WebSearch:
     @traceable
+    @classmethod
     def search(search_term : str):
 
         response = client.search(
@@ -26,4 +27,4 @@ class WebSearch:
         return response 
 
 if __name__ == "__main__":
-    print(search("latest news"))
+    print(WebSearch.search("latest news"))
